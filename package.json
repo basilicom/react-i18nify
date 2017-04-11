@@ -30,7 +30,7 @@
   "author": "JSxMachina",
   "repository": {
     "type": "git",
-    "url": "git://github.com/JSxMachina/react-i18nify.git"
+    "url": "https://github.com/basilicom/react-i18nify"
   },
   "license": "ISC",
   "keywords": [
