@@ -28,16 +28,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Translate = function (_BaseComponent) {
-  _inherits(Translate, _BaseComponent);
+var TranslateInput = function (_BaseComponent) {
+  _inherits(TranslateInput, _BaseComponent);
 
-  function Translate() {
-    _classCallCheck(this, Translate);
+  function TranslateInput() {
+    _classCallCheck(this, TranslateInput);
 
-    return _possibleConstructorReturn(this, (Translate.__proto__ || Object.getPrototypeOf(Translate)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TranslateInput.__proto__ || Object.getPrototypeOf(TranslateInput)).apply(this, arguments));
   }
 
-  _createClass(Translate, [{
+  _createClass(TranslateInput, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -48,18 +48,16 @@ var Translate = function (_BaseComponent) {
         placeholder: _I18n2.default._translate(placeholder),
         value: _I18n2.default._translate(value)
       });
-      delete props.placeholderValue;
-      delete props.defaultValue;
 
       return _react2.default.createElement('input', props);
     }
   }]);
 
-  return Translate;
+  return TranslateInput;
 }(_Base2.default);
 
-Translate.propTypes = {
+TranslateInput.propTypes = {
   placeholder: _react2.default.PropTypes.string,
   value: _react2.default.PropTypes.string
 };
-exports.default = Translate;
+exports.default = TranslateInput;

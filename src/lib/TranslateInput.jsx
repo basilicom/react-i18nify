@@ -2,7 +2,7 @@ import React from 'react';
 import I18n from './I18n';
 import BaseComponent from './Base';
 
-export default class Translate extends BaseComponent {
+export default class TranslateInput extends BaseComponent {
   static propTypes = {
     placeholder: React.PropTypes.string,
     value: React.PropTypes.string,
@@ -15,8 +15,6 @@ export default class Translate extends BaseComponent {
       placeholder: I18n._translate(placeholder),
       value: I18n._translate(value),
     };
-    delete props.placeholderValue;
-    delete props.defaultValue;
 
     return <input {...props} />;
   }
