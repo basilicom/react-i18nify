@@ -6,34 +6,22 @@ export default class Translate extends BaseComponent {
   static propTypes = {
     value: React.PropTypes.string.isRequired,
     dangerousHTML: React.PropTypes.bool,
-    className: React.PropTypes.string,
-    style: React.PropTypes.objectOf(
-      React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.string,
-      ]),
-    ),
+  };
+  static defaultProps = {
+    dangerousHTML: false,
   };
 
-  otherProps() {
-    const result = { ...this.props };
-    delete result.value;
-    return result;
-  }
-
   render() {
-    const { value, dangerousHTML, style, className } = this.props;
-    const translation = I18n._translate(value, this.otherProps());
-
+    const { value, dangerousHTML } = this.props;
+    const translation = I18n._translate(value);
+    const props = {
+      ...this.props,
+    };
+    delete props.value;
+    delete props.dangerousHTML;
     if (dangerousHTML) {
-      return (
-        <span
-          style={style}
-          className={className}
-          dangerouslySetInnerHTML={{ __html: translation }}
-        />
-      );
+      return <span {...props} dangerouslySetInnerHTML={{ __html: translation }} />;
     }
-    return <span style={style} className={className}>{translation}</span>;
+    return <span {...props}>{translation}</span>;
   }
 }

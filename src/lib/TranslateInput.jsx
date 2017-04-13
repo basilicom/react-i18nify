@@ -6,6 +6,12 @@ export default class TranslateInput extends BaseComponent {
   static propTypes = {
     placeholder: React.PropTypes.string,
     value: React.PropTypes.string,
+    dangerousHTML: React.PropTypes.bool,
+  };
+  static defaultProps = {
+    placeholder: '',
+    value: '',
+    dangerousHTML: false,
   };
 
   render() {
