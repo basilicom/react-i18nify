@@ -38,33 +38,22 @@ var Translate = function (_BaseComponent) {
   }
 
   _createClass(Translate, [{
-    key: 'otherProps',
-    value: function otherProps() {
-      var result = _extends({}, this.props);
-      delete result.value;
-      return result;
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
           value = _props.value,
-          dangerousHTML = _props.dangerousHTML,
-          style = _props.style,
-          className = _props.className;
+          dangerousHTML = _props.dangerousHTML;
 
-      var translation = _I18n2.default._translate(value, this.otherProps());
-
+      var translation = _I18n2.default._translate(value);
+      var props = _extends({}, this.props);
+      delete props.value;
+      delete props.dangerousHTML;
       if (dangerousHTML) {
-        return _react2.default.createElement('span', {
-          style: style,
-          className: className,
-          dangerouslySetInnerHTML: { __html: translation }
-        });
+        return _react2.default.createElement('span', _extends({}, props, { dangerouslySetInnerHTML: { __html: translation } }));
       }
       return _react2.default.createElement(
         'span',
-        { style: style, className: className },
+        props,
         translation
       );
     }
@@ -75,8 +64,9 @@ var Translate = function (_BaseComponent) {
 
 Translate.propTypes = {
   value: _react2.default.PropTypes.string.isRequired,
-  dangerousHTML: _react2.default.PropTypes.bool,
-  className: _react2.default.PropTypes.string,
-  style: _react2.default.PropTypes.objectOf(_react2.default.PropTypes.oneOfType([_react2.default.PropTypes.number, _react2.default.PropTypes.string]))
+  dangerousHTML: _react2.default.PropTypes.bool
+};
+Translate.defaultProps = {
+  dangerousHTML: false
 };
 exports.default = Translate;

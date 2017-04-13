@@ -2,7 +2,7 @@
   "name": "react-i18nify",
   "version": "1.8.5",
   "description": "Simple i18n translation and localization components and helpers for React applications.",
-  "main": "./src/index.js",
+  "main": "./build/index.js",
   "scripts": {
     "test": "jest --colors --env=jsdom",
     "test:watch": "npm test -- --watch",
@@ -25,7 +25,7 @@
     "verbose": true
   },
   "files": [
-    "src"
+    "build"
   ],
   "author": "JSxMachina",
   "repository": {

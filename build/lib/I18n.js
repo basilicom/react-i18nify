@@ -4,14 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _moment = require('moment');
-
-var _moment2 = _interopRequireDefault(_moment);
-
-var _intl = require('intl');
-
-var _intl2 = _interopRequireDefault(_intl);
-
 var _formatMissingTranslation = require('./formatMissingTranslation');
 
 var _formatMissingTranslation2 = _interopRequireDefault(_formatMissingTranslation);
@@ -94,9 +86,6 @@ exports.default = {
 
     return this._translate(key, replacements);
   },
-  l: function l(value, options) {
-    return this._localize(value, options);
-  },
   _replace: function _replace(translation, replacements) {
     var _this = this;
 
@@ -123,24 +112,6 @@ exports.default = {
       return this._handleMissingTranslation(key, replacements);
     }
     return this._replace(translation, replacements);
-  },
-  _localize: function _localize(value) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    if (options.dateFormat) {
-      return (0, _moment2.default)(value, options.parseFormat, this._locale, Boolean(options.strictParse)).format(this.t(options.dateFormat));
-    }
-    if (typeof value === 'number') {
-      if (global.Intl) {
-        if (!(Intl.NumberFormat && Intl.NumberFormat.supportedLocalesOf(this._locale).length === 1)) {
-          Intl.NumberFormat = _intl2.default.NumberFormat;
-        }
-      } else {
-        global.Intl = _intl2.default;
-      }
-      return new Intl.NumberFormat(this._locale, options).format(value);
-    }
-    return value;
   },
   _fetchTranslation: function _fetchTranslation(translations, key) {
     var count = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;

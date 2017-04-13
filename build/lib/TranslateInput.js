@@ -58,6 +58,12 @@ var TranslateInput = function (_BaseComponent) {
 
 TranslateInput.propTypes = {
   placeholder: _react2.default.PropTypes.string,
-  value: _react2.default.PropTypes.string
+  value: _react2.default.PropTypes.string,
+  dangerousHTML: _react2.default.PropTypes.bool
+};
+TranslateInput.defaultProps = {
+  placeholder: '',
+  value: '',
+  dangerousHTML: false
 };
 exports.default = TranslateInput;

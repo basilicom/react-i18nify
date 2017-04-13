@@ -22,15 +22,6 @@ Object.defineProperty(exports, 'Translate', {
   }
 });
 
-var _Localize = require('./lib/Localize');
-
-Object.defineProperty(exports, 'Localize', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Localize).default;
-  }
-});
-
 var _TranslateInput = require('./lib/TranslateInput');
 
 Object.defineProperty(exports, 'TranslateInput', {
