@@ -2,7 +2,7 @@
   "name": "react-i18nify",
   "version": "1.8.5",
   "description": "Simple i18n translation and localization components and helpers for React applications.",
-  "main": "./build/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "jest --colors --env=jsdom",
     "test:watch": "npm test -- --watch",
@@ -25,7 +25,7 @@
     "verbose": true
   },
   "files": [
-    "build"
+    "src"
   ],
   "author": "JSxMachina",
   "repository": {
@@ -37,7 +37,6 @@
     "react",
     "i18n",
     "translation",
-    "localization",
     "components",
     "helpers",
     "flux",
@@ -46,8 +45,6 @@
   ],
   "runkitExampleFilename": "example/example.js",
   "dependencies": {
-    "intl": "^1.2",
-    "moment": "^2.17.1",
     "react": "^15.4.2"
   },
   "devDependencies": {
