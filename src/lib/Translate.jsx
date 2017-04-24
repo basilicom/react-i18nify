@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import I18n from './I18n';
 import BaseComponent from './Base';
 
 export default class Translate extends BaseComponent {
   static propTypes = {
-    value: React.PropTypes.string.isRequired,
-    dangerousHTML: React.PropTypes.bool,
+    value: PropTypes.string.isRequired,
+    dangerousHTML: PropTypes.bool,
   };
   static defaultProps = {
     dangerousHTML: false,

@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import I18n from './I18n';
 import BaseComponent from './Base';
 
 export default class TranslateInput extends BaseComponent {
   static propTypes = {
-    placeholder: React.PropTypes.string,
-    value: React.PropTypes.string,
-    dangerousHTML: React.PropTypes.bool,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    dangerousHTML: PropTypes.bool,
   };
   static defaultProps = {
     placeholder: '',
