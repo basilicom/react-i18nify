@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _I18n = require('./I18n');
 
 var _I18n2 = _interopRequireDefault(_I18n);
@@ -57,9 +61,9 @@ var TranslateInput = function (_BaseComponent) {
 }(_Base2.default);
 
 TranslateInput.propTypes = {
-  placeholder: _react2.default.PropTypes.string,
-  value: _react2.default.PropTypes.string,
-  dangerousHTML: _react2.default.PropTypes.bool
+  placeholder: _propTypes2.default.string,
+  value: _propTypes2.default.string,
+  dangerousHTML: _propTypes2.default.bool
 };
 TranslateInput.defaultProps = {
   placeholder: '',
